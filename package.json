@@ -1,0 +1,21 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "This is a website for reading out-of-copyright novels.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/dw18220/novel_reader.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://gitlab.com/dw18220/novel_reader/issues"
+  },
+  "homepage": "https://gitlab.com/dw18220/novel_reader#readme",
+  "dependencies": {}
+}
