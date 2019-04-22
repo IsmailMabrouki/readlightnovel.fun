@@ -17,5 +17,7 @@
     "url": "https://gitlab.com/dw18220/novel_reader/issues"
   },
   "homepage": "https://gitlab.com/dw18220/novel_reader#readme",
-  "dependencies": {}
+  "dependencies": {
+    "sqlite3": "^4.0.6"
+  }
 }
