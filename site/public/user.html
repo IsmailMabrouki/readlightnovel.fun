@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
-
+<!-- TODO : http://qnimate.com/creating-a-percentage-scrolled-indicator/ -->
 <head>
     <!--Website information Start-->
     <title>Reading... - A Simple Reader</title>
@@ -24,27 +24,43 @@
     <link rel="stylesheet" type="text/css" href="css/basic.css" />
     <link rel="stylesheet" type="text/css" href="css/popupbox.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--CSS End-->
 </head>
 
 <body>
     <header></header>
 
-    <div id="side-bar">
+    <div id="sidebar">
+        <div>
+            <p>User Information</p>
+        </div>
+        <div>
+            <a onclick="setLightTheme()">Light Mode</a>
+        </div>
+        <div>
+            <a onclick="setDarkTheme()">Dark Mode</a>
+        </div>
+        <!--To-Top-Bottom Start-->
+        <div id="page-scroll">
+            <div id="page-top">
+                <a href="#novel-start">To Top</a>
+            </div>
+            <div id="page-bottom">
+                <a href="#novel-end">To Bottom</a>
+            </div>
+        </div>
+        <!--To-Top-Bottom End-->
     </div>
 
-    <div id="main-container"></div>
-
-    <!--To-Top-Bottom Start
-    <div id="page-scroll">
-        <div id="page-top">
-            <a href="#">△</a>
-        </div>
-        <div id="page-bottom">
-            <a href="#footer">▽</a>
-        </div>
+    <div id="main-container">
+        <div id="novel-start"></div>
+        <div id="title-text"></div>
+        <div id="novel-end"></div>
     </div>
-    <--To-Top-Bottom End-->
 
     <!--Footer Start-->
     <footer id="footer">
@@ -56,6 +72,8 @@
     <script src="js/createdb.js"></script>
     <script src="js/data.js"></script>
     <script src="js/popupbox.js"></script>
+    <script src="js/nightmode.js"></script>
+    <script src="js/toc.js"></script>
     <!--Javascript End-->
 </body>
 

@@ -5,11 +5,39 @@ colors & sizes
 :root {
     --base-bg-color: rgb(255, 255, 255);
     --gray-bg-color: rgb(219, 217, 213);
+    --sidebar-bg-color: rgb(208, 243, 127);
     --base-font-color: rgb(51, 51, 51);
     --link-font-color: rgb(49, 164, 247);
     --visited-font-color: rgb(151, 103, 47);
     --base-font-size: 1.4rem;
     --base-line-height: 1.5;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --base-bg-color: rgb(255, 255, 255);
+        --gray-bg-color: rgb(219, 217, 213);
+        --sidebar-bg-color: rgb(208, 243, 127);
+        /*not used*/
+        --base-font-color: rgb(51, 51, 51);
+        --link-font-color: rgb(49, 164, 247);
+        --visited-font-color: rgb(151, 103, 47);
+        --base-font-size: 1.4rem;
+        --base-line-height: 1.5;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --base-bg-color: rgb(53, 52, 52);
+        --gray-bg-color: rgb(78, 78, 78);
+        --sidebar-bg-color: rgb(82, 82, 82);
+        --base-font-color: rgb(230, 230, 230);
+        --link-font-color: rgb(49, 164, 247);
+        --visited-font-color: rgb(227, 245, 65);
+        --base-font-size: 1.4rem;
+        --base-line-height: 1.5;
+    }
 }
 
 /*----------------------------
@@ -28,6 +56,12 @@ body {
     color: var(--base-font-color);
     font: var(--base-font-size)/var(--base-line-height) 'Avant Garde', 'Century Gothic', sans-serif;
 }
+
+@media screen and (max-width: 975px) {}
+
+@media screen and (max-width: 854px) {}
+
+@media screen and (max-width: 414px) {}
 
 /*----------------------------
 links
@@ -64,9 +98,48 @@ header
 side bar
 ----------------------------*/
 
+#sidebar {
+    width: 15%;
+    height: 60%;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: var(--gray-bg-color);
+    overflow-x: hidden;
+    padding: 8px 0;
+    display: block;
+}
+
+.btn-resize {
+    width: 50px;
+}
+
+/*----------------------------
+To Top
+----------------------------*/
+
+#page-scroll {
+    display: inline-block;
+}
+
+/* #page-top {}
+
+#page-bottom {} */
+
 /*----------------------------
 main body
 ----------------------------*/
+
+#main-container {
+    margin-left: 20%;
+    /*sidebar : width + left*/
+    margin-bottom: 45px;
+    /* footer*/
+    width: 70%;
+    height: 80%;
+    padding: 8px 0;
+}
 
 /*----------------------------
 footer
@@ -85,11 +158,5 @@ footer
 }
 
 /*----------------------------
-To Top
-----------------------------*/
-
-#page-scroll {}
-
-#page-top {}
-
-#page-bottom {}
+toc
+----------------------------
