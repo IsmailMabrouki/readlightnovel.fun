@@ -5,6 +5,7 @@ node_modules
 .git
 site.zip
 package-lock.json
+makefile
 
 .vscode/*
 !.vscode/settings.json
