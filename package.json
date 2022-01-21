@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/dw18220/novel_reader.git"
+    "url": "git+https://github.com/jenye2010/Novel_Reader.git"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -18,6 +18,17 @@
   },
   "homepage": "https://gitlab.com/dw18220/novel_reader#readme",
   "dependencies": {
-    "sqlite3": "^4.0.6"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-force-ssl": "^0.3.2",
+    "express-generator": "^4.16.1",
+    "knex": "^0.16.5",
+    "marked": "^0.6.2",
+    "npm-check-updates": "^3.1.9",
+    "socket.io": "^2.2.0",
+    "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
