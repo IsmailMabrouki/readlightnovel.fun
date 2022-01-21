@@ -4,6 +4,7 @@
 
 1. Install Node.js (LTS) (https://nodejs.org/)
 2. Type and Run `npm install` in terminal
+
     Packages:
     ├── body-parser@1.19.0
     ├── express-force-ssl@0.3.2
@@ -15,6 +16,7 @@
     ├── npm-check-updates@3.1.9
     ├── socket.io@2.2.0
     └── sqlite3@4.0.8
+
 3. Type and Run `cd site` in terminal
 4. Type and Run `npx nodemon app.js` in terminal
 5. Terminal will show:
@@ -30,14 +32,3 @@
 
 6. Open Chrome or other browser and go to `http://localhost:3000` or the link terminal shows
 7. To stop website running press `Ctrl + C` on Terminal
-
-## Preview
-
-![](Website Preview/1.png)
-![](Website Preview/2.png)
-![](Website Preview/3.png)
-![](Website Preview/4.png)
-![](Website Preview/5.png)
-![](Website Preview/6.png)
-![](Website Preview/7.png)
-![](Website Preview/8.png)
