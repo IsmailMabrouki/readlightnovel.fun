@@ -23,31 +23,65 @@
     <link rel="stylesheet" type="text/css" href="css/basic.css" />
     <link rel="stylesheet" type="text/css" href="css/popupbox.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- toc Start -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.min.js"></script>
+    <!-- toc End -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--CSS End-->
 </head>
 
 <body>
     <header></header>
 
-    <div id="side-bar"></div>
+    <div id="sidebar">
+      <div>
+          <p class="title-side"><a href="index.html">A Simple Reader</a></p>
+          <div class="title-side"><a href="menu.html">Menu</a></div>
+      </div>
+      <p>
+        <div>
+            <a onclick="setLightTheme()"><img class="btn-resize" src="img/light-mode.png"/></a>
+            <a onclick="setDarkTheme()"><img class="btn-resize" src="img/night-mode.png"/></a>
+        </div>
+        <!--To-Top-Bottom Start-->
+        <div id="page-scroll">
+                <a href="#novel-start"><img class="btn-resize" src="img/to-top.png"/></a>
+                <a href="#novel-end"><img class="btn-resize" src="img/to-bottom.png"/></a>
+        </div>
+        <!--To-Top-Bottom End-->
+        <form id="form1" name="form1">
+          <fieldset>
+          <legend>Login:</legend>
+          ID: <input id="login-id" type="text" name="id"  value="guest"><br>
+          Password: <input id="login-psw" type="password" name="psw"  value="56789"><br>
+          <!-- <input type="submit" value="Submit" onclick="login()" action="/login"/> -->
+          <br><a class="submit1" href="javascript: login()">Submit</a>
+          </fieldset>
+        </form>
+      </p>
+    </div>
 
     <div id="main-container">
         <div >
-            <p><a href="n/novel-01.html">Pride and Prejudice</a></p>
-            <p>Author: Jane Austen</p>
+            <p class="title-b"><a href="novel-01.html">Pride and Prejudice - Jane Austen</a></p>
+            <div id="bg-welcome"></div><br><div id="bg-welcome2"></div>
         </div>
     </div>
 
     <!--Footer Start-->
     <footer id="footer">
-        <p>Copyright © <a href="index.html">A Simple Reader</a> All Rights Reserved.</p>
+        <p>Copyright © <a href="index.html">A Simple Reader</a> All Rights Reserved. <a href="report.html" target="_blank">Report</a></p>
     </footer>
     <!--Footer End-->
 
     <!--Javascript Start-->
     <script src="js/createdb.js"></script>
-    <script src="js/data.js"></script>
+    <!-- <script src="js/data.js"></script> -->
     <script src="js/popupbox.js"></script>
+    <script src="js/nightmode.js"></script>
+    <script src="js/toc.js"></script>
     <!--Javascript End-->
 </body>
 

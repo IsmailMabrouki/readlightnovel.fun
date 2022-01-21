@@ -22,36 +22,72 @@
     <link rel="stylesheet" type="text/css" href="css/basic.css" />
     <link rel="stylesheet" type="text/css" href="css/popupbox.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- toc Start -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.min.js"></script>
+    <!-- toc End -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <!--CSS End-->
 </head>
 
 <body>
-    <header>
-        <div id="headtitle">
-            <h1>A Simple Reader</h1>
-            <p>A website that enables user to import and read novels.</p>
-            <a href="menu.html">Enter Reader</a>
-            <ul>
-                <li>C for HTML</li>
-                <li>C for CSS</li>
-                <li>C for JS</li>
-                <li>C for PNG (I used a vector-drawing app "Vectornator" in my ipad to create images used in this site. The app can export the works to png, jpg, svg, and pdf.)</li>
-                <li>? for SVG</li>
-                <li>X for Server</li>
-                <li>X for Database</li>
-                <li>X for Dynamic pages</li>
-                <li>X for Depth (out of 40)</li>
-            </ul>
+    <header></header>
+
+    <div id="sidebar">
+      <div>
+          <p class="title-side"><a href="index.html">A Simple Reader</a></p>
+          <p class="title-side">Welcome</p><br>
+          <p class="title-side"><a href="menu.html">Menu</a></p>
+      </div>
+      <form id="form1" name="form1">
+        <fieldset>
+        <legend>Login:</legend>
+        ID: <input id="login-id" type="text" name="id"  value="guest"><br>
+        Password: <input id="login-psw" type="password" name="psw"  value="56789"><br>
+        <!-- <input type="submit" value="Submit" onclick="login()" action="/login"/> -->
+        <br><a class="submit1" href="javascript: login()">Submit</a>
+        </fieldset>
+      </form>
+      <p>
+        <div>
+            <a onclick="setLightTheme()"><img class="btn-resize" src="img/light-mode.png"/></a>
+            <a onclick="setDarkTheme()"><img class="btn-resize" src="img/night-mode.png"/></a>
         </div>
-    </header>
+        <!--To-Top-Bottom Start-->
+        <div id="page-scroll">
+                <a href="#novel-start"><img class="btn-resize" src="img/to-top.png"/></a>
+                <a href="#novel-end"><img class="btn-resize" src="img/to-bottom.png"/></a>
+        </div>
+        <!--To-Top-Bottom End-->
+      </p>
+    </div>
 
-    <div id="side-bar"></div>
+    <div id="main-container">
+        <div class="wel-title">
+          <h1 class="title-big">A</h1>
+          <h1 class="title-big">Simple</h1>
+          <h1 class="title-big">Reader</h1>
+        </div>
+        <p>A website that enables user to import and read novels.</p>
+        <a href="menu.html">Enter Reader</a><br>
+        <!-- <div id="headtitle"></div> -->
+        <div>
+          <h3 class="title-big">Chatting:</h3>
+          <br>
+          ID<br><input id="userName" type="text" placeholder="UserName" /><br>
+          Message<br><input id="message" type="text" placeholder="Message" /><br>
+          <button id="send">Send</button><br><br>
+          <div id="messages">Dialog:</div><br>
+          <div id="typing">Typing Status:</div><br>
+        </div><br>
 
-    <div id="main-container"></div>
+    </div>
 
     <!--Footer Start-->
     <footer id="footer">
-        <p>Copyright © <a href="index.html">A Simple Reader</a> All Rights Reserved.</p>
+        <p>Copyright © <a href="index.html">A Simple Reader</a> All Rights Reserved. <a href="../report.html" target="_blank">Report</a></p>
     </footer>
     <!--Footer End-->
 
@@ -59,6 +95,8 @@
     <script src="js/createdb.js"></script>
     <script src="js/data.js"></script>
     <script src="js/popupbox.js"></script>
+    <script src="js/nightmode.js"></script>
+    <script src="js/toc.js"></script>
     <!--Javascript End-->
 </body>
 </html>

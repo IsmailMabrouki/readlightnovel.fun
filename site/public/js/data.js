@@ -1,11 +1,33 @@
-"use strict";
-var sql = require("sqlite3");
-var db = new sql.Database("data.db");
-db.serialize(create);
+var socket = io.connect("http://localhost:3000");
 
-function create() {
-    db.run("create table novel (title, chapter, content)");
-    db.run("insert into bookmark values ('Pride and Prejudice', 1, ''
-    )");
-    db.run("insert into bookmark values ('Pride and Prejudice', 2)");
-}
+var message = document.getElementById("message");
+var userName = document.getElementById("userName");
+var sendBtn = document.getElementById("send");
+var messages = document.getElementById("messages");
+var typing = document.getElementById("typing");
+
+socket.on('connect', () => {
+  console.log('Successfully connected!');
+});
+
+sendBtn.addEventListener("click", function() {
+
+socket.emit("chat", {
+    message: message.value,
+    userName: userName.value
+  });
+});
+
+socket.on("chat", function(data) {
+  messages.innerHTML +=
+    "<p><strong>" + data.userName + ": </strong>" + data.message + "</p>";
+    typing.innerHTML = "";
+});
+
+message.addEventListener("keypress", function() {
+  socket.emit("typing", userName.value);
+});
+
+socket.on("typing", function(data) {
+  typing.innerHTML = "<p><em>" + data + " is typing</em></p>";
+});
